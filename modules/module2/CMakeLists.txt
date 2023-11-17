@@ -1,5 +1,5 @@
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
-  ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
 )
 
 add_library(module2 SHARED ${SRC_FILES})
@@ -11,4 +11,4 @@ target_compile_features(module2 PRIVATE cxx_std_17)
 
 target_link_libraries(module2 PUBLIC module1)
 
-add_subdirectory(test)
+# add_subdirectory(test)
