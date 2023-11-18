@@ -22,7 +22,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC module1)
 # Declare dependencies
 add_dependencies(${PROJECT_NAME} module1)
 
-# add_subdirectory(test)
+# Run CMake for library test suites
+add_subdirectory(test)
 
 # Provide public header files
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/include DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/include/${PROJECT_NAME})

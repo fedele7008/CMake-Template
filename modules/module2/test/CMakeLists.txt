@@ -15,10 +15,10 @@ file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
 )
 
 # Create test executable
-add_executable(add_test ${SRC_FILES})
+add_executable(calculator_test ${SRC_FILES})
 
 # Link libraries
-target_link_libraries(add_test PRIVATE module1 gmock gtest_main) # gtest is already linked
+target_link_libraries(calculator_test PRIVATE module2 gmock gtest_main) # gtest is already linked
 
 # Save test executable at test output directory
-set_target_properties(add_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_TEST_OUTPUT_DIRECTORY}/${PROJECT_NAME}")
+set_target_properties(calculator_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_TEST_OUTPUT_DIRECTORY}/${PROJECT_NAME}")

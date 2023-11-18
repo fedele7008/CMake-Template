@@ -6,7 +6,7 @@
 namespace {
 
 TEST(Module1Test, Add) {
-  EXPECT_EQ(add(15, 5), 20);
-}
+    EXPECT_EQ(add(15, 5), 20);
+};
 
-}  // namespace
+}
