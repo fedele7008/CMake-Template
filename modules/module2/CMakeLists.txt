@@ -44,6 +44,3 @@ add_dependencies(${PROJECT_NAME} module1)
 
 # Run CMake for library test suites
 add_subdirectory(test)
-
-# Provide public header files
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/include DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/include/${PROJECT_NAME})
