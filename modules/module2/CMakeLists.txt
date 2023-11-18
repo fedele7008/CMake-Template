@@ -1,14 +1,28 @@
+# Module declaration
+project(module2)
+
+# Locate every .cpp files
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
   ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
 )
 
-add_library(module2 SHARED ${SRC_FILES})
+# Create library
+add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
-target_include_directories(module2 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# Locate header files
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_compile_options(module2 PRIVATE -Wall -Werror)
-target_compile_features(module2 PRIVATE cxx_std_17)
+# Compiler options
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Werror)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
-target_link_libraries(module2 PUBLIC module1)
+# Link libraries
+target_link_libraries(${PROJECT_NAME} PUBLIC module1)
+
+# Declare dependencies
+add_dependencies(${PROJECT_NAME} module1)
 
 # add_subdirectory(test)
+
+# Provide public header files
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/include DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/include/${PROJECT_NAME})
