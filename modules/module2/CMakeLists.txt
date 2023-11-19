@@ -1,5 +1,8 @@
 # Module declaration
-project(module2)
+project(
+  module2
+  DESCRIPTION "This is module 1"
+  LANGUAGES CXX)
 
 # Enable FetchContent
 include(FetchContent)
